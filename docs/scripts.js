@@ -1,7 +1,7 @@
 function onBodyLoad(){
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
-	const param = urlParams.getAll('num')
+	const param = urlParams.getAll()
 	console.log(queryString);
 	console.log(param);
 }
