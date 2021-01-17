@@ -1,9 +1,9 @@
 function onBodyLoad(){
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
-	const num = urlParams.get('num')
+	const param = urlParams.getAll('num')
 	console.log(queryString);
-	console.log(num);
+	console.log(param);
 }
 
 function generateRandomChords() {
