@@ -1,9 +1,11 @@
 function onBodyLoad(){
 	const queryString = window.location.search;
-	const urlParams = new URLSearchParams(queryString);
-	const param = urlParams.values()
 	console.log(queryString);
-	console.log(param);
+	const urlParams = new URLSearchParams(queryString);
+	console.log(urlParams);
+	for(var value of urlParams.values()) {
+		console.log(value);
+	}
 }
 
 function generateRandomChords() {
