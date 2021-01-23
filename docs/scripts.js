@@ -89,7 +89,7 @@ Chord.prototype.createName = function () {
 			this.name += " min7";
 			break;
 		case 2:
-			this.name += " dom7";
+			this.name += " 7";
 			break;
 		case 3:
 			this.name += " dim7";
@@ -133,18 +133,32 @@ function loadParamValues2DomElementsValues(){
 	}
 }
 
-function loadUrlParams(urlParms){
-	for(var pair of searchParams.entries()) {
-		console.log(pair[0]+ ', '+ pair[1]);
+function url2ParamValues(urlParams){
+	for(var pair of urlParams.entries()) {
+		if (pair[0] == "number"){
+			paramValues.number = pair[1];
+		}else if (pair[0] == "root"){
+			paramValues.root = JSON.parse("[" + pair[1] + "]");
+		}else if (pair[0] == "quality"){
+			paramValues.quality = JSON.parse("[" + pair[1] + "]");
+		}
 	}
 }
 
+function loadUrlParams(urlParams){
+	url2ParamValues(urlParams);
+	loadParamValues2DomElementsValues();
+	generateRandomChords();
+}
+
 function printRandomChords(){
-	console.log(randomChords);
+	var result = document.getElementById("result");
+	var resultString = "";
 	for(var i=0; i<randomChords.length; i++){
 		var randomChord = randomChords[i];
-		console.log(randomChord.name);
+		resultString += "  /  " + randomChord.name;
 	}
+	result.innerHTML = resultString;
 }
 
 
@@ -176,14 +190,25 @@ function domElementsValues2ParamValues(){
 	}
 }
 
+function paramValues2Url(){
+	var currentUrlNoParam = window.location.href.split('?')[0];
+	var newUrl = currentUrlNoParam + '?';
+	
+	newUrl += 'number=' + paramValues.number + '&';
+	newUrl += 'root=' + paramValues.root.toString() + '&';
+	newUrl += 'quality=' + paramValues.quality.toString();
+	
+	return newUrl;
+}
+
 function generateRandomChordsButtonTrigger() {
 	domElementsValues2ParamValues();
-	generateRandomChords();
+	var newUrl = paramValues2Url();
+	window.location.replace(newUrl);
 }
 
 function loadDefaultParams(){
 	loadParamValues2DomElementsValues();
-	console.log('ok');
 }
 
 
