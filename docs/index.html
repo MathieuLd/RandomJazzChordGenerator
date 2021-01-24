@@ -8,8 +8,12 @@
 	<meta name="description" content="RandomJazzChordGenerator">
 	<meta name="author" content="MathieuL">
 	
-	<link rel="stylesheet" href="styles.css?v=1.0">
-	<script type="text/javascript" src="scripts.js"></script>
+	<link rel="stylesheet" href="css/styles.css?v=1.0">
+	<script type="text/javascript" src="js/utilities.js"></script>
+	<script type="text/javascript" src="js/Chord.js"></script>
+	<script type="text/javascript" src="js/DomElementsContainer.js"></script>
+	<script type="text/javascript" src="js/ParametersContainer.js"></script>
+	<script type="text/javascript" src="js/mainScript.js"></script>
 </head>
 
 <body  onload="onBodyLoad()">
@@ -84,11 +88,16 @@
 				<input type="checkbox" name="dom7" id="dom7">
 			</div>
 			<div class="box">
+				<label for="min7(b5)">min7(b5)</label>
+				<input type="checkbox" name="dom7" id="min7(b5)">
+			</div>
+			<div class="box">
 				<label for="dim7">dim7</label>
 				<input type="checkbox" name="dim7" id="dim7">
 			</div>
 		</div>
-		<button onclick="generateRandomChordsButtonTrigger()">Generate</button>
+		<button onclick="resetButtonTrigger()">Reset</button>
+		<button onclick="generateButtonTrigger()">Generate</button>
 	</div>
 	<div id="result">
 		
