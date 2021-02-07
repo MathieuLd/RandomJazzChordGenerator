@@ -23,77 +23,115 @@
 			<input type="text" id="chordNbr" name="chordNbr" maxlength="3" size="3">
 		</div>
 		<div class="param" id="root"> <!--Roots select-->
-			<label id="paramName">Roots :</label>
+			<label class="paramCat">Roots :</label>
 			<div class="checkboxChoice">
 				<label for="root0">C</label>
 				<input type="checkbox" name="root0" id="root0">
 			</div>
-			<div class="box">
+			<div class="checkboxChoice">
 				<label for="root1">C#/Db</label>
 				<input type="checkbox" name="root1" id="root1">
 			</div>
-			<div class="box">
+			<div class="checkboxChoice">
 				<label for="root2">D</label>
 				<input type="checkbox" name="root2" id="root2">
 			</div>
-			<div class="box">
+			<div class="checkboxChoice">
 				<label for="root3">D#/Eb</label>
 				<input type="checkbox" name="root3" id="root3">
 			</div>
-			<div class="box">
+			<div class="checkboxChoice">
 				<label for="root4">E</label>
 				<input type="checkbox" name="root4" id="root4">
 			</div>
-			<div class="box">
+			<div class="checkboxChoice">
 				<label for="root5">F</label>
 				<input type="checkbox" name="root5" id="root5">
 			</div>
-			<div class="box">
+			<div class="checkboxChoice">
 				<label for="root6">F#/Gb</label>
 				<input type="checkbox" name="root6" id="root6">
 			</div>
-			<div class="box">
+			<div class="checkboxChoice">
 				<label for="root7">G</label>
 				<input type="checkbox" name="root7" id="root7">
 			</div>
-			<div class="box">
+			<div class="checkboxChoice">
 				<label for="root8">G#/Ab</label>
 				<input type="checkbox" name="root8" id="root8">
 			</div>
-			<div class="box">
+			<div class="checkboxChoice">
 				<label for="root9">A</label>
 				<input type="checkbox" name="root9" id="root9">
 			</div>
-			<div class="box">
+			<div class="checkboxChoice">
 				<label for="root10">A#/Bb</label>
 				<input type="checkbox" name="root10" id="root10">
 			</div>
-			<div class="box">
+			<div class="checkboxChoice">
 				<label for="root11">B</label>
 				<input type="checkbox" name="root11" id="root11">
 			</div>
 		</div>
 		<div class="param" id="quality"> <!--Chord quality-->
-			<label id="paramName">Chord quality :</label>
+			<label class="paramCat">Chord quality :</label>
 			<div class="checkboxChoice">
-				<label for="maj7">maj7</label>
+				<label for="maj7">Maj7 / M7 / Δ7</label>
 				<input type="checkbox" name="maj7" id="maj7">
 			</div>
-			<div class="box">
-				<label for="min7">min7</label>
+			<div class="checkboxChoice">
+				<label for="min7">min7 / m7 / -7</label>
 				<input type="checkbox" name="min7" id="min7">
 			</div>
-			<div class="box">
-				<label for="dim7">dom7</label>
+			<div class="checkboxChoice">
+				<label for="dim7">Dom7 / 7</label>
 				<input type="checkbox" name="dom7" id="dom7">
 			</div>
-			<div class="box">
-				<label for="min7(b5)">min7(b5)</label>
-				<input type="checkbox" name="dom7" id="min7(b5)">
+			<div class="checkboxChoice">
+				<label for="min7(b5)">min7(b5) / m7(b5) / ∅</label>
+				<input type="checkbox" name="min7(b5)" id="min7(b5)">
 			</div>
-			<div class="box">
-				<label for="dim7">dim7</label>
+			<div class="checkboxChoice">
+				<label for="dim7">dim7 / o7</label>
 				<input type="checkbox" name="dim7" id="dim7">
+			</div>
+			<div class="checkboxChoice">
+				<label for="minMaj7">min(Maj7) / m(Maj7) / mM7</label>
+				<input type="checkbox" name="minMaj7" id="minMaj7">
+			</div>
+		</div>
+        <div class="param" id="suspension"> <!--Suspension-->
+			<label class="paramCat">Suspended chord (maj/dom only):</label>
+			<div class="checkboxChoice">
+				<label for="sus2">sus2</label>
+				<input type="checkbox" class="checkboxValueInput" name="sus2" id="sus2">
+			</div>
+			<div class="checkboxChoice">
+				<label for="sus4">sus4</label>
+				<input type="checkbox" class="checkboxValueInput" name="sus4" id="sus4">
+			</div>
+            <div class="localParam"><!--NOM A CHANGER PLUS tard peut etre adapter aussi les autres var et d'autres part du code-->
+				<label for="frequency">Frequency</label>
+				<input type="range" class="localParamInput" min="0" max="100" value="50"  name="frequency">
+			</div>
+		</div>
+        <div class="param" id="extention"> <!--Extention-->
+			<label class="paramCat">Extention (maj/min/dom only):</label>
+			<div class="checkboxChoice">
+				<label for="9th">9th</label>
+				<input type="checkbox" class="checkboxValueInput" name="9th" id="9th">
+			</div>
+			<div class="checkboxChoice">
+				<label for="11th">11th</label>
+				<input type="checkbox" class="checkboxValueInput" name="11th" id="11th">
+			</div>
+            <div class="checkboxChoice">
+                <label for="13th">13th</label>
+				<input type="checkbox" class="checkboxValueInput" name="13th" id="13th">
+			</div>
+            <div class="localParam"><!--NOM A CHANGER PLUS tard peut etre adapter aussi les autres var et d'autres part du code-->
+				<label for="frequency">Frequency</label>
+				<input type="range" class="localParamInput" min="0" max="100" value="50"  name="frequency">
 			</div>
 		</div>
 		<button onclick="resetButtonTrigger()">Reset</button>
